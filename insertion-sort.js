@@ -73,13 +73,39 @@ function insertionSortInPlace(arr) {
   */
 
   // Your code here 
+  let divider = 1;
+  
+  while (divider <= arr.length-1) {
+    console.log(arr.join(','));
+
+    let el = arr[divider];
+
+    for (i = 0; i < divider; i++) {
+      if (arr[i] > el) {
+        for (let j = divider; j > i; j--) {
+          let temp = arr[j-1];
+          arr[j] = temp;
+        }
+        arr[i] = el;
+        i = divider+1;
+      }
+    }
+
+    divider++;
+    
+  }
+  return arr;
+
 }
 
 module.exports = [insertionSort, insertionSortInPlace];
 
 
-// note: 
+// note: node the following does not work, but the codes passes the debugger and test spec;
 // arr = [2,4,6,8,1,3,5,7,9];
 // insertionSort(arr);
+
+arr = [2,4,6,8,1,3,5,7,9];
+insertionSortInPlace(arr)
 
 
