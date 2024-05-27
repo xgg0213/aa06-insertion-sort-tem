@@ -74,7 +74,7 @@ function insertionSortInPlace(arr) {
 
   // Your code here 
   let divider = 1;
-  
+
   while (divider <= arr.length-1) {
     console.log(arr.join(','));
 
@@ -83,8 +83,9 @@ function insertionSortInPlace(arr) {
     for (i = 0; i < divider; i++) {
       if (arr[i] > el) {
         for (let j = divider; j > i; j--) {
-          let temp = arr[j-1];
-          arr[j] = temp;
+          // let temp = arr[j-1];
+          // arr[j] = temp;
+          arr[j] = arr[j-1];
         }
         arr[i] = el;
         i = divider+1;
